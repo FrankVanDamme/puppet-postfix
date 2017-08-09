@@ -16,8 +16,11 @@ class postfix::params {
       $seltype = undef
 
       $mailx_package = $::lsbdistcodename ? {
-        /sarge|etch|lenny|lucid/ => 'mailx',
-        default                  => 'bsd-mailx',
+	  "sarge" => 'mailx',
+	  "etch"  => 'mailx',
+	  "lenny" => 'mailx',
+	  "lucid" => 'mailx', 
+	  default => 'bsd-mailx',
       }
 
       $master_os_template = "${module_name}/master.cf.debian.erb"
